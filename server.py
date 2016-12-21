@@ -7,8 +7,22 @@ app = Flask(__name__)
 @app.route('/api/Contact/List', methods=['GET', 'POST'])
 def contactList():
   userName = request.values.get('username')
-  return json.dumps(load_data('contacts.json', userName))
+  data = load_data('contacts.json')
+  for item in data:
+      if userName == item['userName']:
+          data.remove(item)
+              break
+  return json.dumps(data)
 
+@app.route('/api/Transaction/List', methods=['GET', 'POST'])
+def transactionList():
+    memberId = request.values.get('memberId')
+    tmp = load_data('transations.json')
+    data = []
+    for item in tmp:
+        if memberId == item['memberId']:
+            data.append[item]
+    return json.dumps(data)
 
 def load_data(data_path, username = None):
     data = None
@@ -17,10 +31,6 @@ def load_data(data_path, username = None):
         # try to open the file as json
         with open(data_path, 'r') as file:
             data = json.load(file)
-    for item in data:
-        if username == item['userName']:
-            data.remove(item)
-            break
     return data
 
 
