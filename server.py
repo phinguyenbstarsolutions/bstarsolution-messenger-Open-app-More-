@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/contactList', methods=['GET', 'POST'])
 def contactList():
-  return json.dumps(load_data('/contacts.json'))
+  return json.dumps(load_data('contacts.json'))
 
 
 def load_data(data_path, key = None):
