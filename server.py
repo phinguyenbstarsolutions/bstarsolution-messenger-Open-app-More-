@@ -4,7 +4,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/OAuth', methods=['POST'])
+@app.route('/OAuth', methods=['GET', 'POST'])
 def signIn():
     userName = request.form['username']
     data = load_data('contacts.json')
@@ -22,7 +22,7 @@ def signIn():
             return json.dumps(user)
     return json.dumps({'message': 'User not exist'})
 
-@app.route('/api/Account/UserInfo', methods=['POST'])
+@app.route('/api/Account/UserInfo', methods=['GET', 'POST'])
 def userInfo():
     userName = request.form['username']
     data = load_data('contacts.json')
@@ -48,7 +48,7 @@ def contactList():
           break
   return json.dumps(data)
 
-@app.route('/api/Transaction/List', methods=['POST'])
+@app.route('/api/Transaction/List', methods=['GET', 'POST'])
 def transactionList():
     memberId = request.form['memberId']
     tmp = load_data('transations.json')
