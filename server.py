@@ -4,7 +4,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/OAuth', methods=['GET', 'POST'])
+@app.route('/OAuth', methods=['GET', 'POST', 'PUT'])
 def signIn():
     userName = request.values.get('username')
     data = load_data('contacts.json')
@@ -22,7 +22,7 @@ def signIn():
             return json.dumps(user)
     return json.dumps({'message': 'User not exist'})
 
-@app.route('/api/Account/UserInfo', methods=['GET', 'POST'])
+@app.route('/api/Account/UserInfo', methods=['GET', 'POST', 'PUT'])
 def userInfo():
     userName = request.values.get('username')
     data = load_data('contacts.json')
@@ -38,7 +38,7 @@ def userInfo():
     return json.dumps({'message': 'User not exist'})
 
 
-@app.route('/api/Contact/List', methods=['GET', 'POST'])
+@app.route('/api/Contact/List', methods=['GET', 'POST', 'PUT'])
 def contactList():
   userName = request.values.get('username')
   data = load_data('contacts.json')
@@ -48,7 +48,7 @@ def contactList():
           break
   return json.dumps(data)
 
-@app.route('/api/Transaction/List', methods=['GET', 'POST'])
+@app.route('/api/Transaction/List', methods=['GET', 'POST', 'PUT'])
 def transactionList():
     memberId = request.values.get('memberId')
     tmp = load_data('transations.json')
@@ -69,7 +69,7 @@ def load_data(data_path):
 
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST', 'PUT'])
 def welcome():
   resp = twilio.twiml.Response()
   resp.say("Welcome to Twilio")
