@@ -29,6 +29,7 @@ def userInfo():
     for item in data:
         if userName == item['userName']:
             user = {}
+            user['userid']      = item['id']
             user['fullName']    = item['name']
             user['phoneNumber'] = item['phone']
             user['address']     = item['address']
