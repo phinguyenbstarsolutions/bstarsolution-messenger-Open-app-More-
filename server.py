@@ -1,6 +1,7 @@
 import os
 import json
 from flask import Flask, request
+from django.http import JsonResponse
 
 app = Flask(__name__)
 
