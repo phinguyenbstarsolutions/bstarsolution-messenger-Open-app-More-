@@ -21,7 +21,7 @@ def transactionList():
     data = []
     for item in tmp:
         if memberId == item['memberId']:
-            data.append[item]
+            data.append(item)
     return json.dumps(data)
 
 def load_data(data_path, username = None):
