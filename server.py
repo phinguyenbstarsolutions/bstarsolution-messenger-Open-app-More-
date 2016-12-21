@@ -8,7 +8,22 @@ app = Flask(__name__)
 
 @app.route('/contactList', methods=['GET', 'POST'])
 def contactList():
-  return json.dumps({'contact': CONTACT_LIST})
+  return load_data('contacts.json')
+
+
+def load_data(data_path, key = None):
+    data = None
+    
+    if data_path is not None:
+        # try to open the file as json
+        with open(data_path, 'r') as file:
+            data = json.load(file)
+    if key is not None:
+        return data[key]
+    else:
+        return data
+
+
 
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
