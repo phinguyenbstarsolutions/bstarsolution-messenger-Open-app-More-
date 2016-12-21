@@ -4,6 +4,24 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+@app.route('/OAuth', methods=['GET', 'POST'])
+def signIn():
+    userName = request.values.get('username')
+    data = load_data('contacts.json')
+    for item in data:
+        if userName == item['userName']:
+            user = {}
+            user['access_token']    = 'BStar Solutions'
+            user['token_type']      = 'BStar Solutions'
+            user['expires_in']      = 'BStar Solutions'
+            user['UserName']        = item['userName']
+            user['PhoneNumber']     = item['phone']
+            user['AppEnabled']      = 1
+            user['.issued']         = 'BStar Solutions'
+            user['.expires']        = 'BStar Solutions'
+            return json.dumps(user)
+    return json.dumps({'message': 'User not exist'})
+
 @app.route('/api/Account/UserInfo', methods=['GET', 'POST'])
 def userInfo():
     userName = request.values.get('username')
