@@ -1,7 +1,6 @@
 import os
 import json
 from flask import Flask, request
-from django.http import HttpResponse
 
 app = Flask(__name__)
 
@@ -21,7 +20,7 @@ def signIn():
             user['.issued']         = 'BStar Solutions'
             user['.expires']        = 'BStar Solutions'
             return json.dumps(user)
-    return HttpResponse({'status':'false','message':'User not exist.'}, status=401, content_type="application/json")
+    return json.dumps({'message': 'User not exist'})
 
 @app.route('/api/Account/UserInfo', methods=['GET', 'POST', 'PUT'])
 def userInfo():
@@ -36,7 +35,7 @@ def userInfo():
             user['address']     = item['address']
             user['name']        = item['userName']
             return json.dumps(user)
-    return HttpResponse({'status':'false','message':'User not exist.'}, status=401, content_type="application/json")
+    return json.dumps({'message': 'User not exist'})
 
 
 @app.route('/api/Contact/List', methods=['GET', 'POST', 'PUT'])
