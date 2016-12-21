@@ -20,7 +20,7 @@ def transactionList():
     tmp = load_data('transations.json')
     data = []
     for item in tmp:
-        if memberId == item['memberId']:
+        if memberId == str(item['memberId']):
             data.append(item)
     return json.dumps(data)
 
