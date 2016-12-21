@@ -10,7 +10,12 @@ def userInfo():
     data = load_data('contacts.json')
     for item in data:
         if userName == item['userName']:
-            return json.dumps(item)
+            user = {}
+            user['fullName']    = item['name']
+            user['phoneNumber'] = item['phone']
+            user['address']     = item['address']
+            user['name']        = item['userName']
+            return json.dumps(user)
     return json.dumps({'message': 'User not exist'})
 
 
