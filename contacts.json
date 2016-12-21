@@ -1,0 +1,89 @@
+[{
+  "id": 1,
+  "userName": "phi",
+  "email": "phi.nguyen@bstarsolutions.com",
+  "dateCreated": "01-12-2016",
+  "status": 1,
+  "name": "Phi Nguyen",
+  "address": "BStar Solutions",
+  "phone": "0906102436",
+  "introduceBy": 1,
+  "level": 1
+},{
+  "id": 2,
+  "userName": "phong",
+  "email": "phong.do@bstarsolutions.com",
+  "dateCreated": "01-12-2016",
+  "status": 1,
+  "name": "Phong Do",
+  "address": "BStar Solutions",
+  "phone": "0906102436",
+  "introduceBy": 1,
+  "level": 1
+},{
+  "id": 3,
+  "userName": "tam",
+  "email": "tam.nguyen@bstarsolutions.com",
+  "dateCreated": "01-12-2016",
+  "status": 1,
+  "name": "Tam Nguyen",
+  "address": "BStar Solutions",
+  "phone": "0906102436",
+  "introduceBy": 1,
+  "level": 1
+},{
+  "id": 4,
+  "userName": "dinh",
+  "email": "dinh.le@bstarsolutions.com",
+  "dateCreated": "01-12-2016",
+  "status": 1,
+  "name": "Dinh Le",
+  "address": "BStar Solutions",
+  "phone": "0906102436",
+  "introduceBy": 1,
+  "level": 1
+},{
+  "id": 5,
+  "userName": "khanh",
+  "email": "khanh.nguyen@bstarsolutions.com",
+  "dateCreated": "01-12-2016",
+  "status": 1,
+  "name": "Khanh Nguyen",
+  "address": "BStar Solutions",
+  "phone": "0906102436",
+  "introduceBy": 1,
+  "level": 1
+},{
+  "id": 6,
+  "userName": "huy",
+  "email": "huy.tuong@bstarsolutions.com",
+  "dateCreated": "01-12-2016",
+  "status": 1,
+  "name": "Huy Tuong",
+  "address": "BStar Solutions",
+  "phone": "0906102436",
+  "introduceBy": 1,
+  "level": 1
+},{
+  "id": 7,
+  "userName": "duy",
+  "email": "duy.nguyen@bstarsolutions.com",
+  "dateCreated": "01-12-2016",
+  "status": 1,
+  "name": "Duy Nguyen",
+  "address": "BStar Solutions",
+  "phone": "0906102436",
+  "introduceBy": 1,
+  "level": 1
+},{
+  "id": 8,
+  "userName": "tu",
+  "email": "tu.duong@bstarsolutions.com",
+  "dateCreated": "01-12-2016",
+  "status": 1,
+  "name": "Tu Duong",
+  "address": "BStar Solutions",
+  "phone": "0906102436",
+  "introduceBy": 1,
+  "level": 1
+}]
