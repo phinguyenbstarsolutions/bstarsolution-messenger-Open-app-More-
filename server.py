@@ -20,7 +20,7 @@ def signIn():
             user['.issued']         = 'BStar Solutions'
             user['.expires']        = 'BStar Solutions'
             return json.dumps(user)
-    return json.dumps({'message': 'User not exist'})
+    return JsonResponse({'status':'false','message':'User not exist.'}, status=401)
 
 @app.route('/api/Account/UserInfo', methods=['GET', 'POST', 'PUT'])
 def userInfo():
@@ -35,7 +35,7 @@ def userInfo():
             user['address']     = item['address']
             user['name']        = item['userName']
             return json.dumps(user)
-    return json.dumps({'message': 'User not exist'})
+    return JsonResponse({'status':'false','message':'User not exist.'}, status=401)
 
 
 @app.route('/api/Contact/List', methods=['GET', 'POST', 'PUT'])
