@@ -11,14 +11,18 @@ def contactList():
   for item in data:
       if userName == item['userName']:
           data.remove(item)
-              break
+          break
   return json.dumps(data)
 
 @app.route('/api/Transaction/List', methods=['GET', 'POST'])
 def transactionList():
     memberId = request.values.get('memberId')
     tmp = load_data('transations.json')
-    return json.dumps(tmp)
+    data = []
+    for item in tmp:
+        if memberId == item['memberId']:
+            data.append(item)
+    return json.dumps(data)
 
 def load_data(data_path):
     data = None
