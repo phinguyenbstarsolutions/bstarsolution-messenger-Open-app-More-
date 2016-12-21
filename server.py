@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/api/Contact/List', methods=['GET', 'POST'])
 def contactList():
   userName = request.values.get('username')
-  return json.dumps(load_data('contacts.json'))
+  return json.dumps(load_data('contacts.json', userName))
 
 
 def load_data(data_path, username = None):
