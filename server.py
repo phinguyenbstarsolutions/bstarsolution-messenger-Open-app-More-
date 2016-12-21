@@ -2,26 +2,26 @@ import os
 import json
 from flask import Flask, request
 
-CONTACT_LIST = [{'userName': 'Phong'}, {'userName': 'Dinh'}, {'userName': 'Antony'}, {'userName': 'Khanh'}, {'userName': 'Tan'}, {'userName': 'Hiep'}]
-
 app = Flask(__name__)
 
-@app.route('/contactList', methods=['GET', 'POST'])
+@app.route('/api/Contact/List', methods=['GET', 'POST'])
 def contactList():
+  userName = request.values.get('username')
   return json.dumps(load_data('contacts.json'))
 
 
-def load_data(data_path, key = None):
+def load_data(data_path, username = None):
     data = None
     
     if data_path is not None:
         # try to open the file as json
         with open(data_path, 'r') as file:
             data = json.load(file)
-    if key is not None:
-        return data[key]
-    else:
-        return data
+    for item in data:
+        if username == item['userName']:
+            data.remove(item)
+            break
+    return data
 
 
 
