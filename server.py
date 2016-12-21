@@ -16,7 +16,7 @@ def signIn():
             user['expires_in']      = 0
             user['UserName']        = item['userName']
             user['PhoneNumber']     = item['phone']
-            user['AppEnabled']      = 1
+            user['AppEnabled']      = 'true'
             user['.issued']         = 'BStar Solutions'
             user['.expires']        = 'BStar Solutions'
             return json.dumps(user)
