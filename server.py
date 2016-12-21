@@ -4,6 +4,16 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+@app.route('/api/Account/UserInfo', methods=['GET', 'POST'])
+def userInfo():
+    userName = request.values.get('username')
+    data = load_data('contacts.json')
+    for item in data:
+        if userName == item['userName']:
+            return json.dumps(item)
+    return json.dumps({'message': 'User not exist'})
+
+
 @app.route('/api/Contact/List', methods=['GET', 'POST'])
 def contactList():
   userName = request.values.get('username')
