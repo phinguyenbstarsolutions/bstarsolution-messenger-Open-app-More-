@@ -18,13 +18,9 @@ def contactList():
 def transactionList():
     memberId = request.values.get('memberId')
     tmp = load_data('transations.json')
-    data = []
-    for item in tmp:
-        if memberId == item['memberId']:
-            data.append(item)
-    return json.dumps(data)
+    return json.dumps(tmp)
 
-def load_data(data_path, username = None):
+def load_data(data_path):
     data = None
     
     if data_path is not None:
