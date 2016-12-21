@@ -4,9 +4,9 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/OAuth', methods=['GET', 'POST'])
+@app.route('/OAuth', methods=['GET', 'POST', 'PUT'])
 def signIn():
-    userName = request.form['username']
+    userName = request.values.get('username')
     data = load_data('contacts.json')
     for item in data:
         if userName == item['userName']:
@@ -22,9 +22,9 @@ def signIn():
             return json.dumps(user)
     return json.dumps({'message': 'User not exist'})
 
-@app.route('/api/Account/UserInfo', methods=['GET', 'POST'])
+@app.route('/api/Account/UserInfo', methods=['GET', 'POST', 'PUT'])
 def userInfo():
-    userName = request.form['username']
+    userName = request.values.get('username')
     data = load_data('contacts.json')
     for item in data:
         if userName == item['userName']:
@@ -38,9 +38,9 @@ def userInfo():
     return json.dumps({'message': 'User not exist'})
 
 
-@app.route('/api/Contact/List', methods=['POST'])
+@app.route('/api/Contact/List', methods=['GET', 'POST', 'PUT'])
 def contactList():
-  userName = request.form['username']
+  userName = request.values.get('username')
   data = load_data('contacts.json')
   for item in data:
       if userName == item['userName']:
@@ -48,9 +48,9 @@ def contactList():
           break
   return json.dumps(data)
 
-@app.route('/api/Transaction/List', methods=['GET', 'POST'])
+@app.route('/api/Transaction/List', methods=['GET', 'POST', 'PUT'])
 def transactionList():
-    memberId = request.form['memberId']
+    memberId = request.values.get('memberId')
     tmp = load_data('transations.json')
     data = []
     for item in tmp:
