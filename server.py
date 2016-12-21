@@ -13,7 +13,7 @@ def signIn():
             user = {}
             user['access_token']    = 'BStar Solutions'
             user['token_type']      = 'BStar Solutions'
-            user['expires_in']      = 'BStar Solutions'
+            user['expires_in']      = 0
             user['UserName']        = item['userName']
             user['PhoneNumber']     = item['phone']
             user['AppEnabled']      = 1
