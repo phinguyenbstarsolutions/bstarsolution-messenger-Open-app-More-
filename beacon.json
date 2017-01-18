@@ -3,38 +3,5 @@
   "data": {
     "objectId": "byqH1ZuFAM",
     "alias": "TransX",
-    "details": [
-      {
-        "beaconId": "Gsxd",
-        "profile": "iBeacon",
-        "major": "450",
-        "minor": "200",
-        "interval": "200",
-        "txPower": "7",
-        "proximityUuid": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
-        "namespace": "f7826da64fa24e988024",
-        "instanceId": "656c74385846",
-        "url": "http://transx.io",
-        "alias": "Transx",
-        "error": "false"
-      },{
-        "beaconId": "7jVV",
-        "profile": "iBeacon",
-        "major": "450",
-        "minor": "200",
-        "interval": "200",
-        "txPower": "7",
-        "proximityUuid": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
-        "namespace": "f7826da64fa24e988024",
-        "instanceId": "656c74385846",
-        "url": "http://transx.io",
-        "alias": "Transx1",
-        "error": "false"
-      }
-    ],
-    "username": "transx",
-    "createdAt": "2017-01-12T08:40:27.160Z",
-    "updatedAt": "2017-01-13T11:09:59.085Z",
-    "url": "http://transx.com/eddystone"
   }
 }
